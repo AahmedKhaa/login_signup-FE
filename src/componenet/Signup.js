@@ -10,18 +10,18 @@ function Signup() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSignup = async (event) => {
-    event.preventDefault();
-    console.log(
-      "Signing up with name:",
-      name,
-      "email:",
-      email,
-      "and password:",
-      password
-    );
-    navigate(`/login`);
-  };
+  // const handleSignup = async (event) => {
+  //   event.preventDefault();
+  //   console.log(
+  //     "Signing up with name:",
+  //     name,
+  //     "email:",
+  //     email,
+  //     "and password:",
+  //     password
+  //   );
+  //   navigate(`/login`);
+  // };
 
   let signup = async (e) => {
     e.preventDefault();
@@ -34,11 +34,18 @@ function Signup() {
     } catch (e) {
       console.log(e);
     }
-    console.log("Logging in with email:", email, "and password:", password);
+    console.log(
+      "Logging in with name:",
+      name,
+      "and email:",
+      email,
+      "and password:",
+      password
+    );
     navigate(`/Login`);
   };
   let login = async () => {
-    console.log("Logging in with email:", email, "and password:", password);
+    // console.log("Logging in with email:", email, "and password:", password);
     navigate(`/Login`);
   };
 

@@ -9,10 +9,15 @@ function Event() {
   const [users, setUsers] = useState([]);
   const [edit, setEdit] = useState(false);
   const [active, setActive] = useState(null);
+  const user = {
+    category,
+    date,
+    location,
+  };
   const saveUser = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:9500/event", {
+      await axios.post("http://localhost:9000/event", {
         category,
         date,
         location,
@@ -59,13 +64,13 @@ function Event() {
 
   const deleteUser = (user) => {
     if (window.confirm("Are u sure to delete")) {
-      let copy = users.filter((item) => item != user);
+      let copy = users.filter((item) => item !== user);
       setUsers([...copy]);
     }
   };
 
   return (
-    <div className="App">
+    <div className="Event">
       <h1>EVENT DETAIL</h1>
       <div className="container">
         <div className="row">

@@ -20,6 +20,9 @@ function Basic() {
     email,
     raddress,
   };
+  const nextUser = async (e) => {
+    navigate(`/event`);
+  };
 
   const saveUser = async (e) => {
     e.preventDefault();
@@ -33,7 +36,7 @@ function Basic() {
     } catch (e) {
       console.log(e);
     }
-    navigate(`/event`);
+    // navigate(`/event`);
 
     // let form = async (e) => {
     //   e.preventDefault();
@@ -138,8 +141,8 @@ function Basic() {
             {/* <button type="submit" onClick={login}>
               Next
             </button> */}
-            <button type="submit" onClick={saveUser}>
-              Next{" "}
+            <button type="submit" onClick={nextUser}>
+              Next
             </button>
           </div>
         </div>
